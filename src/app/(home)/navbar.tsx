@@ -20,7 +20,7 @@ href: string;
 children: React.ReactNode;
 isactive?: boolean;
 }
-const NavebarItem=({href,children,isactive}:NavbarProps)=>{
+const NavbarItem=({href,children,isactive}:NavbarProps)=>{
     return (
         <Button asChild variant="outline" className={cn("bg-transparent hover:bg-transparent rounded-full hover:border-primary border-transparent px-3.5 text-lg",isactive&&"bg-black text-white hover:bg-black hover:text-white") } >
             <Link href={href}>
@@ -29,7 +29,7 @@ const NavebarItem=({href,children,isactive}:NavbarProps)=>{
         </Button>
     );
 };
-const navebarItem=[
+const navbarItem=[
     {href:"/",children:"Home"},
     {href:"/about",children:"About"},
     {href:"/features",children:"Features"},
@@ -40,7 +40,7 @@ const navebarItem=[
 export const Navbar = () => {
     const pathname=usePathname();
     const [isSidebarOpen,setIsSidebarOpen]=useState(false);
-    ;
+    
     return (
        <nav className="h-20 flex border-b justify-between font-medium bg-white">
         <Link href={"/"} className="pl-6 flex items-center">
@@ -49,18 +49,18 @@ export const Navbar = () => {
         </span>
         </Link>
         <NavbarSidebar
-        items={navebarItem}
+        items={navbarItem}
         open={isSidebarOpen}
         onOpenChange={setIsSidebarOpen} />
 
         <div className="items-center gap-4 hidden lg:flex">
-            {navebarItem.map((item)=>(
-                <NavebarItem 
+            {navbarItem.map((item)=>(
+                <NavbarItem 
                 key={item.href} 
                 href={item.href}
                 isactive={pathname===item.href}>
                     {item.children}
-                </NavebarItem>
+                </NavbarItem>
             ))}
         </div>
 

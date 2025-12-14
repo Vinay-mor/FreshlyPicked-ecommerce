@@ -1,6 +1,6 @@
 import  Link  from "next/link";
 import{Sheet,SheetContent,SheetHeader,SheetTitle,} from"@/components/ui/sheet";
-import { ScrollArea } from "@radix-ui/react-scroll-area";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 interface NavbarItem{
     href:string;
@@ -31,11 +31,11 @@ export const NavbarSidebar=({items,open,onOpenChange}:Props)=>{
             </Link>
            ))}
            <div className="border-t">
-                <Link href="/signin"className="w-full text-left p-4 hover:bg-black hover:text-white flex items-center text-base font-medium"
+                <Link href="/sign-in"className="w-full text-left p-4 hover:bg-black hover:text-white flex items-center text-base font-medium"
                 onClick={()=>onOpenChange(false)}>
                     Log-in
                 </Link>
-                <Link href="/signup"className="w-full text-left p-4 hover:bg-black hover:text-white flex items-center text-base font-medium"
+                <Link href="/sign-up"className="w-full text-left p-4 hover:bg-black hover:text-white flex items-center text-base font-medium"
                 onClick={()=>onOpenChange(false)}>
                 Start selling
                 </Link>
