@@ -40,7 +40,7 @@ const navbarItem=[
 export const Navbar = () => {
     const pathname=usePathname();
     const [isSidebarOpen,setIsSidebarOpen]=useState(false);
-    
+
     return (
        <nav className="h-20 flex border-b justify-between font-medium bg-white">
         <Link href={"/"} className="pl-6 flex items-center">
@@ -80,7 +80,11 @@ export const Navbar = () => {
         </div>
 
         <div className="flex lg:hidden items-center justify-center">
-            <Button variant="ghost" className="size-12 border-transparent bg-white" onClick={()=>setIsSidebarOpen(true)}>
+            <Button 
+            variant="ghost"
+             className="size-12 border-transparent bg-white"
+              onClick={()=>setIsSidebarOpen(true)}
+              >
                 <MenuIcon />
             </Button>
         </div>
