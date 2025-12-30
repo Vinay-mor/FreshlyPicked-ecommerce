@@ -1,11 +1,12 @@
 "use client"
 import { SearchInput } from "./search-input";
 import { Categories } from "./categories";
-import { CustomCategory } from "../types";
+
 import { useTRPC } from "@/trpc/client";
 import { useSuspenseQuery } from "@tanstack/react-query";
+import { CategoriesGetManyOutput } from "@/modules/categories/types";
 interface Props {
-  data: CustomCategory[];
+  data: CategoriesGetManyOutput;
 };
 export const SearchFilters = () => {
   const trpc=useTRPC();
