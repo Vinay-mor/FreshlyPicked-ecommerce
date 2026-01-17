@@ -18,9 +18,8 @@ const Page = async ({ params, searchParams }: Props) => {
         limit: DEFAULT_LIMIT,
     }));
     return (
-        <HydrationBoundary state={dehydrate(queryClient)}>
             <ProductListView tenantSlug={slug} narrowView />
-        </HydrationBoundary>
+
     )
 }
 export default Page;
