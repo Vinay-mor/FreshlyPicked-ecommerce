@@ -9,7 +9,6 @@ import { LinkIcon, StarIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Fragment } from "react/jsx-runtime";
-//import { CartButton } from "../components/cart-button";
 import dynamic from "next/dynamic"
 const CartButton=dynamic(
     ()=>import("../components/cart-button").then(
